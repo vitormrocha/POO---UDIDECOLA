@@ -2,8 +2,8 @@
     CLIENTE
     {
         - CPF
-        - Nome
-        - Endereço completo
+        - Nome : Verificação feita
+        - Endereço completo 
         - Data de Nascimento
         - Data de cadastro
         - E-mail
@@ -31,11 +31,11 @@ public class Cliente {
 
     private Data dataCadastro; // ok
 
-    private Endereco endereco; // ok
+    private Endereco endereco; // verificação feita. Necessita de codigo de erro mais expecifico
 
-    private String email; // ok
+    private String email; // verificação feita. Necessita de codigo de erro mais expecifico
 
-    private int numeroCompras; // ok
+    private int numeroCompras; // ok. verificação feita.
 
     private VIP vip; // falta cálculo desconto
 
@@ -43,35 +43,51 @@ public class Cliente {
 
     }
 
-    public Cliente(String nome, CPF cpf, Data dataNascimento, Data dataCadastro, Endereco endereco, String email, VIP vip){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
-        this.dataCadastro = dataCadastro;
-        this.endereco = endereco;
-        this.email = email;
-        this.numeroCompras = 0;
-        this.vip = vip;
-    }
-
-    // USADO PARA TESTES (contem 'númeroCompras' para ser colocado, será utilizado para testes, mas quando cria-se o cliente esse valor é 0)
-    public Cliente(String nome, CPF cpf, Data dataNascimento, Data dataCadastro, Endereco endereco, String email, int numeroCompras, VIP vip){
-        this.nome = nome;
-        this.cpf = cpf;
-        this.dataNascimento = dataNascimento;
-        this.dataCadastro = dataCadastro;
-        this.endereco = endereco;
-        this.email = email;
-        this.numeroCompras = numeroCompras;
-        this.vip = vip;
-    }
-
+    
 
     // Pensar se teremos verificação de nome
     // Ou até colocar uma nova classe 'nome' e 'sobrenome'
     // Ambos verificados se existe caracter especial, por exemplo.
+
+    
+    private boolean verificarNome(String nome) {
+        if (nome.length() != 0 || nome != " ") {
+            this.nome = nome;
+            return true;
+        }
+        else 
+            return false;
+    }
+    public int getNumeroCompras() {
+        return numeroCompras;
+    }
+
+    public void setNumeroCompras(int numeroCompras) {
+        if (numeroCompras > 0)
+            this.numeroCompras = numeroCompras;
+        else 
+            this.numeroCompras = 0;
+    }
+    
+
+
+    public Endereco getEndereco() {
+        return endereco;
+    }
+
+
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+
+
     public void setNome(String nome) {
-        this.nome = nome;
+        if (verificarNome(nome) == true)
+            this.nome = nome;
+        else 
+            System.out.printf("\nERRO. NOME INVALIDO.\n"); 
     }
 
     public String getNome(){
@@ -82,13 +98,77 @@ public class Cliente {
         this.cpf = cpf;
     }
 
+    private boolean verificarEmail(String email) {
+        if (email.length() == 0 || email.contains("@") == false) 
+            return false;
+        else {
+            this.email = email; 
+            return true;
+        }
+    }
+    
+
+    public CPF getCpf() {
+        return cpf;
+    }
+
+    public Data getDataNascimento() {
+        return dataNascimento;
+    }
+
+
+
+    public void setDataNascimento(Data dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
+
+
+
+    public Data getDataCadastro() {
+        return dataCadastro;
+    }
+
+
+
+    public void setDataCadastro(Data dataCadastro) {
+        this.dataCadastro = dataCadastro;
+    }
+
+
+
+    public VIP getVip() {
+        return vip;
+    }
+
+
+
+    public void setVip(VIP vip) {
+        this.vip = vip;
+    }
+
+
+
     // Pensar se teremos verificação de e-mail ou não
     public void setEmail(String email) {
-        this.email = email;
+        if (verificarEmail(email) == true)
+            this.email = email;
+        else 
+            System.out.printf("\nERRO. EMAIL INVALIDO.\n");
     }
 
     public String getEmail() {
         return email;
+    }
+
+    public Cliente(String nom, CPF cpf1, Data nasci, Data datacadastro, Endereco endereco, String email, int num, VIP vip) {
+        setCpf(cpf1);
+        setEmail(email);
+        setNome(nom);
+        setNumeroCompras(num);
+        setEndereco(endereco);
+        setDataNascimento(nasci);
+        setDataCadastro(datacadastro);
+        setVip(vip);        
     }
 
     public void exibeCliente()
