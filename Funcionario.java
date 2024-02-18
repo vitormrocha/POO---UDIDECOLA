@@ -26,6 +26,7 @@ public class Funcionario{
 
     }
 
+    /* 
     public Funcionario(int numeroCarteiraTrabalho, int qnt_HoteisCadastrados, String funcaoFuncionario, double salario) {
         this.numeroCarteiraTrabalho = numeroCarteiraTrabalho;
         this.qnt_HoteisCadastrados = qnt_HoteisCadastrados;
@@ -39,7 +40,7 @@ public class Funcionario{
             this.salario = salario + (salario * porcentagemSalario);
         else
             this.salario = salario;
-    }
+    }*/ 
 
 
     public int getNumeroCarteiraTrabalho() {
@@ -47,7 +48,10 @@ public class Funcionario{
     }
 
     public void setNumeroCarteiraTrabalho(int numeroCarteiraTrabalho) {
-        this.numeroCarteiraTrabalho = numeroCarteiraTrabalho;
+        if (numeroCarteiraTrabalho > 0)
+            this.numeroCarteiraTrabalho = numeroCarteiraTrabalho;
+        else 
+            this.numeroCarteiraTrabalho = (numeroCarteiraTrabalho) * (-1);
     }
 
     public int getQnt_HoteisCadastrados() {
@@ -55,7 +59,10 @@ public class Funcionario{
     }
 
     public void setQnt_HoteisCadastrados(int qnt_HoteisCadastrados) {
-        this.qnt_HoteisCadastrados = qnt_HoteisCadastrados;
+        if (qnt_HoteisCadastrados > 0)
+            this.qnt_HoteisCadastrados = qnt_HoteisCadastrados;
+        else 
+            this.qnt_HoteisCadastrados = 0;
     }
 
     public String getFuncaoFuncionario() {
@@ -87,5 +94,23 @@ public class Funcionario{
 
     public static void setPorcentagemSalario(double porcentagemSalario) {
         Funcionario.porcentagemSalario = porcentagemSalario;
+    }
+
+    public boolean isCadastraHotel() {
+        return cadastraHotel;
+    }
+
+    public void setCadastraHotel(boolean cadastraHotel) {
+        this.cadastraHotel = cadastraHotel;
+    }
+    public Funcionario(int numeroCarteiraTrabalho, int qnt_HoteisCadastrados, String funcaoFuncionario, double salario) {
+        setNumeroCarteiraTrabalho(numeroCarteiraTrabalho);
+        setQnt_HoteisCadastrados(qnt_HoteisCadastrados);
+        setFuncaoFuncionario(funcaoFuncionario);
+
+        if (funcaoFuncionario.equals("Cadastra Hotel"))
+            cadastraHotel = true;
+    
+        setSalario(salario);
     }
 }
