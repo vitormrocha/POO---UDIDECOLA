@@ -1,0 +1,16 @@
+Apenas alterações básicas no código como retirada de partes desnecessárias como 
+
+if (rua.lenght() == 0 || rua.contains(" "))
+
+por 
+
+if (rua.trim().isEmpty())
+
+
+e retirando itens como 
+if(validacao() == true)
+em que são desnecessários o "== true" 
+
+
+Resumo: 
+  Código mantido, sem adicionar novos elementos, apenas uma melhora em algumas partes para maior clareza de código e eficiência
