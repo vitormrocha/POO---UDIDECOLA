@@ -1,0 +1,9 @@
+Adição de novas classes:
+    Empresa 
+    Hotel
+
+Existe uma igualdade entre companhia aérea e Hotel, então criado uma classe pai Empresa para ambas 
+
+Classe Hotel ainda incompleta, falta verificação de todas as suas informações e a parte dos quartos (o qual ainda está sendo planejada)
+
+Com a criação da Classe Empresa houve alteração na classe Companhia aérea
