@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*
 HOTÉIS
 {
@@ -51,7 +53,7 @@ HOTÉIS
 }
 */
 
-
+import java.util.ArrayList;
 
 public class Hotel extends Empresa{
     private Endereco endereco;
@@ -66,6 +68,7 @@ public class Hotel extends Empresa{
     private double preco_buffet;
     private double preco_passagem;
     private int quant_passagens;
+    private ArrayList <ProdutosOferecidos> produtos; 
 
     public int getQuant_passagens() {
         return quant_passagens;
@@ -77,6 +80,15 @@ public class Hotel extends Empresa{
 
     public Hotel(){
 
+    }
+
+    public void AdicionarProduto(String nome_produto, double preco, int quant) {
+        if (nome_produto.isEmpty() == false && preco > 0 && quant > 0) {
+            ProdutosOferecidos product = new ProdutosOferecidos(nome_produto, preco, quant);
+            produtos.add(product);
+        }
+        else 
+            System.out.printf("\nPRODUTO INVALIDO.\n");
     }
 
     public Hotel(String cpnj, String nomeOficial, String nomeCriacao, Data dataCriacao, Endereco endereco, int numeroEstrelas, boolean aceitaPets, int numeroQuartos, Horario check_in, Horario check_out, String fraseDivulgacao, String descricaoHotel, int remuneracaoPagaPorDiaria, int quant_passagens, double preco_buffet, double preco_passagem) {
@@ -93,6 +105,8 @@ public class Hotel extends Empresa{
         this.quant_passagens = quant_passagens;
         this.preco_buffet = preco_buffet;
         this.preco_passagem = preco_passagem; 
+        AdicionarProduto("Buffet", preco_buffet, 100);
+        AdicionarProduto("Passagem", preco_passagem, quant_passagens);
     }
 
     public double getPreco_buffet() {
@@ -187,4 +201,18 @@ public class Hotel extends Empresa{
     public void exibir_opcoesCompra() {
         System.out.printf("\nOPCOES DE COMPRA: \n1: PASSAGEM POR \t[%2f].\n2 - BUFFET POR \t[%2f].\n", preco_passagem, preco_buffet);
     }
+
+    public void exibir_maispesquisado() { //Ainda vou testar
+        ProdutosOferecidos aux = new ProdutosOferecidos();
+        aux = produtos.get(0);
+        for (int i = 1; i < produtos.size(); i++) {
+            ProdutosOferecidos aux2 = new ProdutosOferecidos();
+            aux2 = produtos.get(i);
+            if (aux2.getQuant() > aux.getQuant() ) 
+                    aux = aux2;
+        }
+        System.out.printf("\nPRODUTO MAIS BUSCADO: \t[%s]\n", aux.getNome_produto() );
+    }
+
+   
 }
