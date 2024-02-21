@@ -51,6 +51,8 @@ HOTÉIS
 }
 */
 
+
+
 public class Hotel extends Empresa{
     private Endereco endereco;
     private int numeroEstrelas;
@@ -61,12 +63,23 @@ public class Hotel extends Empresa{
     private String fraseDivulgacao;
     private String descricaoHotel;
     private int remuneracaoPagaPorDiaria;
+    private double preco_buffet;
+    private double preco_passagem;
+    private int quant_passagens;
+
+    public int getQuant_passagens() {
+        return quant_passagens;
+    }
+
+    public void setQuant_passagens(int quant_passagens) {
+        this.quant_passagens = quant_passagens;
+    }
 
     public Hotel(){
 
     }
 
-    public Hotel(String cpnj, String nomeOficial, String nomeCriacao, Data dataCriacao, Endereco endereco, int numeroEstrelas, boolean aceitaPets, int numeroQuartos, Horario check_in, Horario check_out, String fraseDivulgacao, String descricaoHotel, int remuneracaoPagaPorDiaria) {
+    public Hotel(String cpnj, String nomeOficial, String nomeCriacao, Data dataCriacao, Endereco endereco, int numeroEstrelas, boolean aceitaPets, int numeroQuartos, Horario check_in, Horario check_out, String fraseDivulgacao, String descricaoHotel, int remuneracaoPagaPorDiaria, int quant_passagens, double preco_buffet, double preco_passagem) {
         super(cpnj, nomeOficial, nomeCriacao, dataCriacao);
         this.endereco = endereco;
         this.numeroEstrelas = numeroEstrelas;
@@ -77,7 +90,27 @@ public class Hotel extends Empresa{
         this.fraseDivulgacao = fraseDivulgacao;
         this.descricaoHotel = descricaoHotel;
         this.remuneracaoPagaPorDiaria = remuneracaoPagaPorDiaria;
+        this.quant_passagens = quant_passagens;
+        this.preco_buffet = preco_buffet;
+        this.preco_passagem = preco_passagem; 
     }
+
+    public double getPreco_buffet() {
+        return preco_buffet;
+    }
+
+    public void setPreco_buffet(double preco_buffet) {
+        this.preco_buffet = preco_buffet;
+    }
+
+    public double getPreco_passagem() {
+        return preco_passagem;
+    }
+
+    public void setPreco_passagem(double preco_passagem) {
+        this.preco_passagem = preco_passagem;
+    }
+
 
     public Endereco getEndereco() {
         return endereco;
@@ -149,5 +182,9 @@ public class Hotel extends Empresa{
 
     public void setRemuneracaoPagaPorDiaria(int remuneracaoPagaPorDiaria) {
         this.remuneracaoPagaPorDiaria = remuneracaoPagaPorDiaria;
+    }
+
+    public void exibir_opcoesCompra() {
+        System.out.printf("\nOPCOES DE COMPRA: \n1: PASSAGEM POR \t[%2f].\n2 - BUFFET POR \t[%2f].\n", preco_passagem, preco_buffet);
     }
 }
