@@ -1,3 +1,0 @@
-Novas classes: ContaBancaria e Compra criadas.
-Modificações grandes na classe hotel (novos atributos preço e quantidade de passagens)
-Modificações menores na classe Cliente (Novo atributo que guarda o codigo da ultima compra. POr notação minha, 1 - passagem de avião, 2 - buffet
