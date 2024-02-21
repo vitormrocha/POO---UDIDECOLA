@@ -1,3 +1,15 @@
 Novas classes: ContaBancaria e Compra criadas.
 Modificações grandes na classe hotel (novos atributos preço e quantidade de passagens)
 Modificações menores na classe Cliente (Novo atributo que guarda o codigo da ultima compra. POr notação minha, 1 - passagem de avião, 2 - buffet
+
+EDIÇÃO: 21/02/2024 
+Classe ProdutosOferecidos criado
+Classe HistoricoPesquisa criado
+Classe Compra atualizado para abranger essas duas classes.
+
+Classe Hotel: Atributo ArrayList ProdutosOferecidos criado
+Metodo de buscar item mais comprado implementado (pfvr testem) 
+
+Classe Cliente: Atributo Historico de pesquisa criado 
+Metodo de exibir historico tambem foi criado.
+
