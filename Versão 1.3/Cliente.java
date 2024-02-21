@@ -41,6 +41,8 @@ public class Cliente {
 
     private int codigo_ultcompra;
 
+    private HistoricoPesquisa historico; 
+
     public Cliente(){
 
     }
@@ -199,5 +201,20 @@ public class Cliente {
         this.codigo_ultcompra = codigo_ultcompra;
     }
 
+
+
+    public HistoricoPesquisa getHistorico() {
+        return historico;
+    }
+
+
+
+    public void setHistorico(HistoricoPesquisa historico) {
+        this.historico = historico;
+    }
+
+    public void ExibirHistoricoPesquisa() {
+        historico.ExibirHistorico();
+    }
 
 }
