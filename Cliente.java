@@ -39,6 +39,10 @@ public class Cliente {
 
     private VIP vip; // falta cálculo desconto
 
+    private int codigo_ultcompra;
+
+    private HistoricoPesquisa historico; 
+
     public Cliente(){
 
     }
@@ -51,12 +55,13 @@ public class Cliente {
 
     
     private boolean verificarNome(String nome) {
-        if (nome.length() != 0 || nome != " ") {
+        if (nome.length() == 0 || nome == " ") 
+            return false;
+        
+        else {
             this.nome = nome;
             return true;
         }
-        else 
-            return false;
     }
     public int getNumeroCompras() {
         return numeroCompras;
@@ -168,7 +173,8 @@ public class Cliente {
         setEndereco(endereco);
         setDataNascimento(nasci);
         setDataCadastro(datacadastro);
-        setVip(vip);        
+        setVip(vip);    
+        codigo_ultcompra = -1;    
     }
 
     public void exibeCliente()
@@ -182,4 +188,33 @@ public class Cliente {
         System.out.println("Numero de compras: " + numeroCompras);
         vip.exibeVIP();
     }
+
+
+
+    public int getCodigo_ultcompra() {
+        return codigo_ultcompra;
+    }
+
+
+
+    public void setCodigo_ultcompra(int codigo_ultcompra) {
+        this.codigo_ultcompra = codigo_ultcompra;
+    }
+
+
+
+    public HistoricoPesquisa getHistorico() {
+        return historico;
+    }
+
+
+
+    public void setHistorico(HistoricoPesquisa historico) {
+        this.historico = historico;
+    }
+
+    public void ExibirHistoricoPesquisa() {
+        historico.ExibirHistorico();
+    }
+
 }
