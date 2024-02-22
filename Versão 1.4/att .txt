@@ -50,13 +50,13 @@ Classe hotel: Arraylist inicializada (antes n tava pq eu sou burro e tenho alzhe
 metodo intro,menu e realizar_compra adicionados. Esse ultimo invalida a necessidade da classe compra, ent apaguem.
 Considerar depois criar um construtor base pra facilitar na hora de testar. (Exemplo public hotel () { //codigo de inicialização base} )
 
-Classe contabancaria: Atributos simplificados para ser apenas saldo, ja que esta e um atributo de cliente.
+Classe contabancaria: Atributos simplificados para ser apenas saldo, ja que este é um atributo de cliente.
 
-Classe Cliente: Atributo contabancaria atualizado e construtores e getters e setters atualizados. 
-Método exibir criado
+Classe Cliente: Atributo contabancaria atualizado e construtores getters e setters atualizados. 
+Método exibir criado.
 
 Classe ProdutosOferecidos: Setters atualizados
 
-Classe HistoricoPesquisa: metodo de exibir historico atualizado
+Classe HistoricoPesquisa: metodo de exibir historico atualizado. Construtor atualizado.
 
 
