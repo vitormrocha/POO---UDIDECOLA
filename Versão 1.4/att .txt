@@ -42,4 +42,21 @@ cpnj		-> cnpj
 
 - Aceita inserçãoo via código fonte, e leitura do usuario
 
+ATUALIZAÇÃO 22/02/2024
+
+Atualização minuscula na chamada do construtor da empresa na classe Hotel para abranger o novo parametro Endereco
+
+Classe hotel: Arraylist inicializada (antes n tava pq eu sou burro e tenho alzheimer)
+metodo intro,menu e realizar_compra adicionados. Esse ultimo invalida a necessidade da classe compra, ent apaguem.
+Considerar depois criar um construtor base pra facilitar na hora de testar. (Exemplo public hotel () { //codigo de inicialização base} )
+
+Classe contabancaria: Atributos simplificados para ser apenas saldo, ja que esta e um atributo de cliente.
+
+Classe Cliente: Atributo contabancaria atualizado e construtores e getters e setters atualizados. 
+Método exibir criado
+
+Classe ProdutosOferecidos: Setters atualizados
+
+Classe HistoricoPesquisa: metodo de exibir historico atualizado
+
 
