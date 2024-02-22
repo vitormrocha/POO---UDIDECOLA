@@ -1,0 +1,45 @@
+[ Quantidade de Classes ]  Manteve a quantidade
+
+[ Classes alteradas ]
+- Empresa
+- Companhia Aerea
+
+[ Funcionamento ]
+- Depende da classe endereço e data para funcionar;
+
+[ Alteracoess ]
+
+> MUDANÇA DE DUAS VARIAVEIS!!!
+nomeCriacao 	-> nomeMarketing
+cpnj		-> cnpj
+
+> Empresa:
+
+	- Novo escopo:
+    		private String cnpj;
+    		private String nomeOficial;
+    		private String nomeMarketing;
+    		private Data dataCriacao;
+    		private Endereco endereço;
+
+	- Adicionada interacao com classe Data e classe Endereço;
+
+	- Método de validação genérica de string;
+
+	- Verificacao de strings nulas;
+
+
+> Companhia Area:
+
+	- Novo Escopo:
+		private final Empresa empresaEmQuestao;
+    		private final double porcentagemPorPassagem;
+    		private final String dataDeAdesaoAoUD;
+
+	- Até então, hiper genérica. Ela pega a empresa, junta a porcentagem forneecida pela empresa, e guarda em si a data que o cadastro na Udi Decola foi feito.
+
+[ MAIN ]
+
+- Aceita inserçãoo via código fonte, e leitura do usuario
+
+
