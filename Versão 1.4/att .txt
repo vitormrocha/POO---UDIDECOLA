@@ -61,4 +61,10 @@ Classe ProdutosOferecidos: Setters atualizados
 
 Classe HistoricoPesquisa: metodo de exibir historico atualizado. Construtor atualizado.
 
+ATUALIZAÇÃO 23/02/2024
+
+Classe Hotel e Classe ProdutosOferecidos atualizados
+Classe ProdutosOferecidos: novo atributo int val_comprado que guarda a quantidade de vezes que tal produto foi atualizado
+Método realizar_compra e exibir_maispesquisado atualizados para abranger esse método.
+
 
