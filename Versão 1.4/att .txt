@@ -49,6 +49,7 @@ Atualização minuscula na chamada do construtor da empresa na classe Hotel para
 Classe hotel: Arraylist inicializada (antes n tava pq eu sou burro e tenho alzheimer)
 metodo intro,menu e realizar_compra adicionados. Esse ultimo invalida a necessidade da classe compra, ent apaguem.
 Considerar depois criar um construtor base pra facilitar na hora de testar. (Exemplo public hotel () { //codigo de inicialização base} )
+atributo quantcompras_vid adicionado, tem o proposito de armazenar o valor de compras que o cliente precisa ter para se tornar vip
 
 Classe contabancaria: Atributos simplificados para ser apenas saldo, ja que este é um atributo de cliente.
 
