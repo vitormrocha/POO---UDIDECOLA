@@ -34,4 +34,8 @@ public class Horario {
         if (minuto >= 0 && minuto <= 59)
             this.minuto = minuto;
     }
+
+      public void exibeHorario() {
+        System.out.printf("\nHORA:%d\nMINUTO:%d\n", hora, minuto);
+    }
 }
