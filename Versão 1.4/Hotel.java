@@ -69,6 +69,32 @@ public class Hotel extends Empresa{
     private double preco_passagem;
     private int quant_passagens;
     private ArrayList <ProdutosOferecidos> produtos; 
+    private int getQuantcompras_vip;
+    private int quantcompras_vip;
+
+    public ArrayList<ProdutosOferecidos> getProdutos() {
+        return produtos;
+    }
+
+    public void setProdutos(ArrayList<ProdutosOferecidos> produtos) {
+        this.produtos = produtos;
+    }
+
+    public int getGetQuantcompras_vip() {
+        return getQuantcompras_vip;
+    }
+
+    public void setGetQuantcompras_vip(int getQuantcompras_vip) {
+        this.getQuantcompras_vip = getQuantcompras_vip;
+    }
+
+    public int getQuantcompras_vip() {
+        return quantcompras_vip;
+    }
+
+    public void setQuantcompras_vip(int quantcompras_vip) {
+        this.quantcompras_vip = quantcompras_vip;
+    }
 
     public int getQuant_passagens() {
         return quant_passagens;
@@ -89,7 +115,7 @@ public class Hotel extends Empresa{
     }
 
 
-    public Hotel(String cpnj, String nomeOficial, String nomeCriacao, Data dataCriacao, Endereco endereco, int numeroEstrelas, boolean aceitaPets, int numeroQuartos, Horario check_in, Horario check_out, String fraseDivulgacao, String descricaoHotel, int remuneracaoPagaPorDiaria, int quant_passagens, double preco_buffet, double preco_passagem) {
+    public Hotel(String cpnj, String nomeOficial, String nomeCriacao, Data dataCriacao, Endereco endereco, int numeroEstrelas, boolean aceitaPets, int numeroQuartos, Horario check_in, Horario check_out, String fraseDivulgacao, String descricaoHotel, int remuneracaoPagaPorDiaria, int quant_passagens, double preco_buffet, double preco_passagem, int quantcompras_vip) {
         super(cpnj, nomeOficial, nomeCriacao, dataCriacao, endereco);
         this.endereco = endereco;
         this.numeroEstrelas = numeroEstrelas;
@@ -106,6 +132,7 @@ public class Hotel extends Empresa{
         this.produtos = new ArrayList<>();
         AdicionarProduto("Buffet", preco_buffet, 100);
         AdicionarProduto("Passagem", preco_passagem, quant_passagens);
+        setQuantcompras_vip(quantcompras_vip);
     }
 
     public double getPreco_buffet() {
@@ -242,6 +269,7 @@ public class Hotel extends Empresa{
             produtos.get(opcao).setQuant(aux - num);
             int aux2 = cliente.getNumeroCompras() + 1;
             cliente.setNumeroCompras(aux2);
+
             return true;
         }
     }
