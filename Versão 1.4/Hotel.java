@@ -133,7 +133,7 @@ public class Hotel extends Empresa{
         this.preco_buffet = preco_buffet;
         this.preco_passagem = preco_passagem; 
         this.produtos = new ArrayList<>();
-        AdicionarProduto("Buffet", preco_buffet, 100);
+        AdicionarProduto("Buffet", preco_buffet, 500);
         AdicionarProduto("Passagem", preco_passagem, quant_passagens);
         setQuantcompras_vip(quantcompras_vip);
     }
@@ -240,10 +240,10 @@ public class Hotel extends Empresa{
         for (int i = 1; i < produtos.size(); i++) {
             ProdutosOferecidos aux2 = new ProdutosOferecidos();
             aux2 = produtos.get(i);
-            if (aux2.getQuant() > aux.getQuant() ) 
+            if (aux2.getVal_comprado() > aux.getVal_comprado() ) 
                     aux = aux2;
         }
-        System.out.printf("\nPRODUTO MAIS BUSCADO: \t[%s]\n", aux.getNome_produto() );
+        System.out.printf("\nPRODUTO MAIS BUSCADO: \t[%s]\nCOM [%d] COMPRAS\n", aux.getNome_produto(), aux.getVal_comprado());
     }
 
     public void intro() {
@@ -265,24 +265,29 @@ public class Hotel extends Empresa{
             return false;
         }
         else {
+            //System.out.printf("\nQUERENDO COMPRAR: %s\n", produtos.get(opcao).getNome_produto());
+
             cliente.getContabancaria().sacar(produtos.get(opcao).getPreco());
             HistoricoPesquisa hist = new HistoricoPesquisa(this, produtos.get(opcao), cliente, this.getDataCriacao(), num, this.getCheck_in());
-            cliente.setHistorico(hist);
+            cliente.setHistorico(hist); // atualiza o historico
             int aux = produtos.get(opcao).getQuant();
             produtos.get(opcao).setQuant(aux - num);
             int aux2 = cliente.getNumeroCompras() + 1;
             cliente.setNumeroCompras(aux2);
-
+            int temp = produtos.get(opcao).getVal_comprado() + num;
+            produtos.get(opcao).setVal_comprado(temp);
+            //produtos.get(opcao).teste_valcomprado();
+            //System.out.printf("\nCMPRA FEITIA\n");
             return true;
         }
     }
-
+    /* 
     public boolean cliente_vip (Cliente cliente) {
         if (cliente.getNumeroCompras() >= quantcompras_vip) 
             return true;
         else 
             return false;
-    }
+    }*/
 
    
 }
