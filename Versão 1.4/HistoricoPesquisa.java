@@ -95,8 +95,15 @@ public class HistoricoPesquisa {
     }
 
     public void ExibirHistorico() {
-        if (cliente.getNumeroCompras() > 0 )
+        if (cliente.getNumeroCompras() > 0 ) {
             System.out.printf("\nHISTORICO DE PESQUISA: \nNOME PRODUTO: \t[%s]\nPRECO: \t[%2f]\nQUANTIDADE COMPRADA: \t[%d]\n", nome_produto, preco_produto, quant_comprada);
+            System.out.printf("\nHORARIO DA COMPRA: \n");
+            data.exibeData();
+            System.out.printf("\nHorario da compra:\n");
+            horario.exibeHorario();
+        
+        }
+            
         else 
             System.out.printf("\nNAO EXISTE HISTORICO AINDA.");
     }
