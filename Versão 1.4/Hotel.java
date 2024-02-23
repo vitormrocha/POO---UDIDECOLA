@@ -235,15 +235,15 @@ public class Hotel extends Empresa{
     }
 
     public void exibir_maispesquisado() { //Ainda vou testar
-        ProdutosOferecidos aux = new ProdutosOferecidos();
-        aux = produtos.get(0);
-        for (int i = 1; i < produtos.size(); i++) {
-            ProdutosOferecidos aux2 = new ProdutosOferecidos();
-            aux2 = produtos.get(i);
-            if (aux2.getVal_comprado() > aux.getVal_comprado() ) 
+        int aux = produtos.get(0).getVal_comprado();
+        int i;
+        for (i = 1; i < produtos.size(); i++) {
+            int aux2 = produtos.get(i).getVal_comprado();
+            if (aux2 > aux ) 
                     aux = aux2;
         }
-        System.out.printf("\nPRODUTO MAIS BUSCADO: \t[%s]\nCOM [%d] COMPRAS\n", aux.getNome_produto(), aux.getVal_comprado());
+
+        System.out.printf("\nPRODUTO MAIS BUSCADO: \t[%s]\nCOM [%d] COMPRAS\n", produtos.get(i).getNome_produto(), produtos.get(i).getVal_comprado());
     }
 
     public void intro() {
@@ -265,9 +265,9 @@ public class Hotel extends Empresa{
             return false;
         }
         else {
-            //System.out.printf("\nQUERENDO COMPRAR: %s\n", produtos.get(opcao).getNome_produto());
+            System.out.printf("\nQUERENDO COMPRAR: %s\n", produtos.get(opcao).getNome_produto());
 
-            cliente.getContabancaria().sacar(produtos.get(opcao).getPreco());
+            //cliente.getContabancaria().sacar(produtos.get(opcao).getPreco());
             HistoricoPesquisa hist = new HistoricoPesquisa(this, produtos.get(opcao), cliente, this.getDataCriacao(), num, this.getCheck_in());
             cliente.setHistorico(hist); // atualiza o historico
             int aux = produtos.get(opcao).getQuant();
@@ -277,7 +277,7 @@ public class Hotel extends Empresa{
             int temp = produtos.get(opcao).getVal_comprado() + num;
             produtos.get(opcao).setVal_comprado(temp);
             //produtos.get(opcao).teste_valcomprado();
-            //System.out.printf("\nCMPRA FEITIA\n");
+            System.out.printf("\nCMPRA FEITIA\n");
             return true;
         }
     }
