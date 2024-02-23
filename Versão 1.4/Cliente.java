@@ -250,12 +250,7 @@ public class Cliente {
         historico.ExibirHistorico();
     }
 
-    public boolean cliente_vip () {
-        if (numeroCompras >= quantcompras_vip) 
-            return true;
-        else 
-            return false;
-    }
+    
 
     
 
