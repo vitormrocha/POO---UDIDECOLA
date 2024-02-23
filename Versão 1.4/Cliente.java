@@ -41,6 +41,8 @@ public class Cliente {
 
     private int codigo_ultcompra;
 
+    private int quantcompras_vip; //valor de compras que o cliente precisa realizar para se tornar vip
+
     public Contabancaria getContabancaria() {
         return contabancaria;
     }
@@ -78,6 +80,21 @@ public class Cliente {
     public int getNumeroCompras() {
         return numeroCompras;
     }
+
+    public int getQuantcompras_vip() {
+        return quantcompras_vip;
+    }
+
+
+
+    public void setQuantcompras_vip(int quantcompras_vip) {
+        if (quantcompras_vip < 0)
+            quantcompras_vip = 0;
+        else
+            this.quantcompras_vip = quantcompras_vip;
+    }
+
+
 
     public void setNumeroCompras(int numeroCompras) {
         if (numeroCompras > 0)
@@ -177,7 +194,7 @@ public class Cliente {
         return email;
     }
 
-    public Cliente(String nom, CPF cpf1, Data nasci, Data datacadastro, Endereco endereco, String email, int num, VIP vip, Contabancaria contabancaria) {
+    public Cliente(String nom, CPF cpf1, Data nasci, Data datacadastro, Endereco endereco, String email, int num, VIP vip, Contabancaria contabancaria, int quantcompras_vip) {
         setCpf(cpf1);
         setEmail(email);
         setNome(nom);
@@ -189,6 +206,7 @@ public class Cliente {
         codigo_ultcompra = -1;    
         this.contabancaria = contabancaria;
         this.historico = new HistoricoPesquisa();
+        setQuantcompras_vip(quantcompras_vip);
     }
 
     public void exibeCliente()
