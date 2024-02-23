@@ -1,8 +1,8 @@
 public class ProdutosOferecidos {
     private String nome_produto;
     private double preco;
-    private int quant;
-    private int val_comprado;
+    private int quant; // quantidade de objetos disponiveis para compra
+    private int val_comprado; //quantidade de vezes que esse objeto foi comprado
 
     public ProdutosOferecidos() {
 
