@@ -19,7 +19,7 @@ public class HistoricoPesquisa {
         Data datefirst = new Data (1,1,2000);
         Horario hourfirst = new Horario(1,1);
         Endereco endfirst = new Endereco("Nada", 0, "nenhum", "nenhum", "mg");
-        Hotel hot = new Hotel("nenhum","nenhum","nenhum",datefirst,endfirst,1,false,1,hourfirst,hourfirst,"nenhum","nenhum",1,1,1.0f,1.0f);
+        Hotel hot = new Hotel("nenhum","nenhum","nenhum",datefirst,endfirst,1,false,1,hourfirst,hourfirst,"nenhum","nenhum",1,1,1.0f,1.0f, 1);
         hotel = hot;
         data = datefirst;
         nome_produto = "nenhum";
