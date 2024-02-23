@@ -242,6 +242,7 @@ public class Hotel extends Empresa{
             if (aux2 > aux ) 
                     aux = aux2;
         }
+        i--; //O metodo get tem uma exceção que da erro caso o valor dado nela seja maior ou igual ao size do arraylist. 
 
         System.out.printf("\nPRODUTO MAIS BUSCADO: \t[%s]\nCOM [%d] COMPRAS\n", produtos.get(i).getNome_produto(), produtos.get(i).getVal_comprado());
     }
