@@ -266,9 +266,7 @@ public class Hotel extends Empresa{
             return false;
         }
         else {
-            System.out.printf("\nQUERENDO COMPRAR: %s\n", produtos.get(opcao).getNome_produto());
-
-            //cliente.getContabancaria().sacar(produtos.get(opcao).getPreco());
+            cliente.getContabancaria().sacar(produtos.get(opcao).getPreco());
             HistoricoPesquisa hist = new HistoricoPesquisa(this, produtos.get(opcao), cliente, this.getDataCriacao(), num, this.getCheck_in());
             cliente.setHistorico(hist); // atualiza o historico
             int aux = produtos.get(opcao).getQuant();
@@ -277,8 +275,6 @@ public class Hotel extends Empresa{
             cliente.setNumeroCompras(aux2);
             int temp = produtos.get(opcao).getVal_comprado() + num;
             produtos.get(opcao).setVal_comprado(temp);
-            //produtos.get(opcao).teste_valcomprado();
-            System.out.printf("\nCMPRA FEITIA\n");
             return true;
         }
     }
