@@ -228,7 +228,7 @@ public class Hotel extends Empresa{
     }
 
     public boolean realizar_compra (int opcao, int num, Cliente cliente) {
-        if (opcao > produtos.size() || opcao < 0 || num > produtos.get(opcao).getQuant() || num < 0) 
+        if (opcao > produtos.size() || opcao < 0 || num > produtos.get(opcao).getQuant() || num <= 0) 
             return false;
         else if (cliente.getContabancaria().getSaldo() < produtos.get(opcao).getPreco()) {
             System.out.printf("\nSALDO INSUFICIENTE.\n");
