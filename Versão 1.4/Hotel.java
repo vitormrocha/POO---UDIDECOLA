@@ -234,7 +234,7 @@ public class Hotel extends Empresa{
         System.out.printf("\nOPCOES DE COMPRA: \n1: PASSAGEM POR \t[%2f].\n2 - BUFFET POR \t[%2f].\n", preco_passagem, preco_buffet);
     }
 
-    public void exibir_maispesquisado() { //Ainda vou testar
+    public void exibir_maispesquisado() { 
         int aux = produtos.get(0).getVal_comprado();
         int i;
         for (i = 1; i < produtos.size(); i++) {
