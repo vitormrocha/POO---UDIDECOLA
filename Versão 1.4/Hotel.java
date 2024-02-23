@@ -93,7 +93,10 @@ public class Hotel extends Empresa{
     }
 
     public void setQuantcompras_vip(int quantcompras_vip) {
-        this.quantcompras_vip = quantcompras_vip;
+        if (quantcompras_vip > 0)
+            this.quantcompras_vip = quantcompras_vip;
+        else 
+            this.quant_passagens = 0;
     }
 
     public int getQuant_passagens() {
@@ -272,6 +275,13 @@ public class Hotel extends Empresa{
 
             return true;
         }
+    }
+
+    public boolean cliente_vip (Cliente cliente) {
+        if (cliente.getNumeroCompras() >= quantcompras_vip) 
+            return true;
+        else 
+            return false;
     }
 
    
