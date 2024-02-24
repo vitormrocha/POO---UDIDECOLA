@@ -2,7 +2,8 @@ public class ProdutosOferecidos {
     // ================================= Atributos
     private String nome_produto;
     private double preco;
-    private int quant;
+    private int quant;// quantidade de objetos disponiveis para compra
+    private int val_comprado; //quantidade de vezes que esse objeto foi comprado
 
 
     // ================================= Construtores
@@ -14,6 +15,7 @@ public class ProdutosOferecidos {
         setNome_produto(nome_produto);
         setPreco(preco);
         setQuant(quant);
+        val_comprado = 0;
     }
 
     // ================================= Getters e Setters
@@ -49,6 +51,16 @@ public class ProdutosOferecidos {
         else 
             this.quant = 0;
     }
-    
-    
+
+    public int getVal_comprado() {
+        return val_comprado;
+    }
+
+    public void setVal_comprado(int val_comprado) {
+        this.val_comprado = val_comprado;
+    }
+
+    public void teste_valcomprado() {
+        System.out.printf("\nTESTE VAL COMPRADO:\t[%d]", val_comprado);
+    }
 }
