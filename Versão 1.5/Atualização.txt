@@ -1,0 +1,45 @@
+Todas as classes tiveram alteração
+
+A classe ContaBancaria foi deletada e todos os seus componentes 
+Foi retirado partes do clienteVip da classe Hotel 
+
+
+O código foi inteiramente reorganizado se baseando em:
+
+
+    // ================================= Atributos
+
+
+    // ================================= Construtores
+
+
+    // ================================= Getters e Setters
+
+
+    // ================================= Outros Métodos
+
+
+A classe CompanhiaAerea foi alterada colocando um extends Empresa
+
+
+Muitos construtores foram criados para várias classes 
+
+
+E muitas verificações foram revistas para evitar erros ou problemas 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
