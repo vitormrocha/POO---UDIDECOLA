@@ -1,0 +1,22 @@
+Atualizações:
+
+========================= | [1] Retiradas |
+
+- Main)
+    > [1] Foi retirado o input manual da companhia, junto a função scanner "Scanner scanner = new Scanner(System.in);"
+    > [2] Foi retirado o input via construtor da companhia
+
+
+========================= | [2] Adições |
+
+- Classes)
+    > Trecho
+    > Voo
+
+- Métodos)
+    > CompanhiaArea —
+        >> exibirCompanhia:void
+
+    > Data
+        >> diaDaSemana: int
+
