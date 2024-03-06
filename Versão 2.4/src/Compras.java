@@ -40,6 +40,66 @@ public class Compras {
         setHora_busca(hora_busca);
         setHora_compra(hora_compra);
     } 
+
+    public DatasProcuradas returnM_Datas() { //metodo que retorna maior data 
+        DatasProcuradas retorno = null;
+        int Num = 0;
+        if (!historico.isEmpty()) {
+            // Percorre cada histórico na lista
+            for (int i = 0; i < historico.size(); i++) {
+                Historico histAux = historico.get(i);
+    
+                if (histAux.getDatas_procuradas() != null && !histAux.getDatas_procuradas().isEmpty()) {
+                    // Percorre cada data procurada no histórico
+                    for (int j = 0; j < histAux.getDatas_procuradas().size(); j++) {
+                        DatasProcuradas data = histAux.getDatas_procuradas().get(j);
+    
+                        // Verifica se a quantidade de pesquisas é maior que a atual máxima
+                        if (data.getNum_pesquisa() > Num) {
+                            // Atualiza a máxima quantidade de pesquisas e a data correspondente
+                            Num = data.getNum_pesquisa();
+                            retorno = data;
+                        }
+                    }
+                }
+            }
+        }
+    
+        // Retorna a DatasProcuradas com o maior número de pesquisas
+        return retorno;
+    }
+
+    public TrechosProcurados returnM_Trechos() {
+        TrechosProcurados retorno = null;
+        int num = 0;
+
+        if (!historico.isEmpty()) {
+            for (int i = 0; i < historico.size(); i++) {
+                Historico histaux = historico.get(i);
+
+                if (histaux.getDatas_procuradas() != null && !histaux.getDatas_procuradas().isEmpty()) {
+                    for (int j = 0; j < histaux.getTrechos_procurados().size(); j++) {
+                        TrechosProcurados trechoaux = histaux.getTrechos_procurados().get(j);
+                        if (trechoaux.getNum_pesquisa() > num) {
+                            num = trechoaux.getNum_pesquisa();
+                            retorno = trechoaux;
+                        }
+                    }
+                }
+            }
+        }
+        return retorno;
+    }
+
+    public void MostraM_Pesquisa() {
+        TrechosProcurados t = returnM_Trechos();
+        DatasProcuradas d = returnM_Datas();
+
+        System.out.printf("\nData mais pesquisada:\t %d / %d / %d\n", d.getData().getDia(), d.getData().getMes(), d.getData().getAno());
+        System.out.printf("\nTrecho mais pesquisado:\t %s\n",t.getNome_destino());
+
+    }
+    
     
    public void comprar_passagem(PassagemAerea passagem) {
         if (!cliente.getVip().getEh_VIP()) {
