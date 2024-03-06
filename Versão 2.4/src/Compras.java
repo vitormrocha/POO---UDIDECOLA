@@ -92,12 +92,20 @@ public class Compras {
         return retorno;
     }
 
-    public void MostraM_Pesquisa() {
-        TrechosProcurados t = returnM_Trechos();
+    public void MostrarM_Data () {
         DatasProcuradas d = returnM_Datas();
-
         System.out.printf("\nData mais pesquisada:\t %d / %d / %d\n", d.getData().getDia(), d.getData().getMes(), d.getData().getAno());
+
+    }
+
+    public void MostrarM_Trecho() {
+        TrechosProcurados t = returnM_Trechos();
         System.out.printf("\nTrecho mais pesquisado:\t %s\n",t.getNome_destino());
+    }
+
+    public void MostraM_Pesquisa() {
+        MostrarM_Data();
+        MostrarM_Trecho();
 
     }
     
