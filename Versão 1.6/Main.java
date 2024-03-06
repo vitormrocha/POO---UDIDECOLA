@@ -26,7 +26,7 @@ public class Main {
               setOcorrenciaMensal = 0, setDiaSemana e setModalidadeMensal não importam
 
               // UMA reserva no mês:
-              setOcorrenciaMensal = 1, setModalidadeMensal não importa, setDiaSemana influencia                                 -> se for 1 será domingo, 2 segunda, e ressspectivamente
+              setOcorrenciaMensal = 1, setModalidadeMensal não importa, setDiaSemana influencia                                 
 
               // DUAS reservas no mes:
               setOcorrenciaMensal = 2, setModalidadeMensal = 1, setDiaSemana influencia                                         -> A primeira aparicao e ultima aparicao do dia da semana definido em setDiaSemana
