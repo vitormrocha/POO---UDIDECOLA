@@ -8,6 +8,12 @@ public class Historico {
         datas_procuradas = new ArrayList<>();
         trechos_procurados = new ArrayList<>();
     }
+    public Historico (DatasProcuradas datas, TrechosProcurados trecho) {
+        datas_procuradas = new ArrayList<>();
+        datas_procuradas.add(datas);
+        trechos_procurados = new ArrayList<>();
+        trechos_procurados.add(trecho);
+    }
     public ArrayList<DatasProcuradas> getDatas_procuradas() {
         return datas_procuradas;
     }
