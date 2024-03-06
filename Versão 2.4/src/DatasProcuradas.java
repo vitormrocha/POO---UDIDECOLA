@@ -1,4 +1,4 @@
-public class datasProcuradas {
+public class DatasProcuradas {
     private Data data;
     private int num_pesquisa;
     
@@ -17,7 +17,7 @@ public class datasProcuradas {
         else this.num_pesquisa = 0;
     }
 
-    public datasProcuradas(Data data, int num_pesquisa) {
+    public DatasProcuradas(Data data, int num_pesquisa) {
         setData(data);
         setNum_pesquisa(num_pesquisa);
     }
