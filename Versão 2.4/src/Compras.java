@@ -39,6 +39,7 @@ public class Compras {
         setCliente(cliente);
         setHora_busca(hora_busca);
         setHora_compra(hora_compra);
+        historico = new ArrayList<>();
     } 
 
     public DatasProcuradas returnM_Datas() { //metodo que retorna maior data 
@@ -103,7 +104,7 @@ public class Compras {
     
    public void comprar_passagem(PassagemAerea passagem) {
         if (!cliente.getVip().getEh_VIP()) {
-            if (cliente.getSaldo() > passagem.)
+            if (cliente.getSaldo() > passagem.g)
         }
    }
 
