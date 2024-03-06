@@ -1,9 +1,9 @@
-public class trechosProcurados {
+public class TrechosProcurados {
     private int num_pesquisa;
     private String nome_destino;
     private String destino;
 
-    public trechosProcurados(int num_pesquisa, String nome, String destino) {
+    public TrechosProcurados(int num_pesquisa, String nome, String destino) {
         setNum_pesquisa(num_pesquisa);
         setNome_destino(nome);
         setDestino(destino);
