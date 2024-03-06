@@ -1,39 +1,35 @@
+import java.util.ArrayList;
+
 public class Historico {
-    private Endereco origem;
-    private Endereco destino;
-    private Data data_ida;
-    private Data data_volta;
-    
-    public Endereco getOrigem() {
-        return origem;
+    private ArrayList <DatasProcuradas> datas_procuradas;
+    private ArrayList <TrechosProcurados> trechos_procurados;
+
+    public Historico () {
+        datas_procuradas = new ArrayList<>();
+        trechos_procurados = new ArrayList<>();
     }
-    public void setOrigem(Endereco origem) {
-        this.origem = origem;
+    public ArrayList<DatasProcuradas> getDatas_procuradas() {
+        return datas_procuradas;
     }
-    public Endereco getDestino() {
-        return destino;
+    public void setDatas_procuradas(ArrayList<DatasProcuradas> datas_procuradas) {
+        this.datas_procuradas = datas_procuradas;
     }
-    public void setDestino(Endereco destino) {
-        this.destino = destino;
+    public ArrayList<TrechosProcurados> getTrechos_procurados() {
+        return trechos_procurados;
     }
-    public Data getData_ida() {
-        return data_ida;
-    }
-    public void setData_ida(Data data_ida) {
-        this.data_ida = data_ida;
-    }
-    public Data getData_volta() {
-        return data_volta;
-    }
-    public void setData_volta(Data data_volta) {
-        this.data_volta = data_volta;
+    public void setTrechos_procurados(ArrayList<TrechosProcurados> trechos_procurados) {
+        this.trechos_procurados = trechos_procurados;
     }
 
-    public Historico (Endereco endereco, Endereco destino, Data data_ida, Data data_volta) {
-        setOrigem(destino);
-        setDestino(destino);
-        setData_ida(data_ida);
-        setData_volta(data_volta);
+    public void AddDatas(DatasProcuradas date) {
+        datas_procuradas.add(date);
+    }
+    public void AddTrecho(TrechosProcurados trecho) {
+        trechos_procurados.add(trecho);
+    }
+    public void AddHistorico(DatasProcuradas date, TrechosProcurados trecho) {
+        AddDatas(date);
+        AddTrecho(trecho);
     }
     
 }
