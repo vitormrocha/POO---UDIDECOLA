@@ -213,4 +213,14 @@ public class Cliente {
             saldo -= valor;
         }
     }
+
+    public boolean upgradeVip(double desconto, int num) {
+        if (numeroCompras >= num) {
+            setVip(new VIP(true, desconto, dataCadastro));
+            return true;
+        }
+        else {
+            return false;
+        }
+    } 
 }
