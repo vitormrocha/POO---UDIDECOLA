@@ -8,6 +8,7 @@ public class Compras {
     private Data hora_busca;
     private Data hora_compra;
     private Historico historica_compra;
+    private HistoricoPesquisa historico_pesquisa;
 
     public Compras(Cliente cliente, Data hora_busca, Data hora_compra, Historico historica_compra) {
         setCliente(cliente);
@@ -45,7 +46,7 @@ public class Compras {
         DatasProcuradas retorno = null;
         int num = 0;
 
-            for (DatasProcuradas data : historica_compra.getDatas_procuradas()) {
+            for (DatasProcuradas data : historico_pesquisa.getDatas_procuradas()) {
                 if (data.getNum_pesquisa() > num ) {
                     num = data.getNum_pesquisa();
                     retorno = data;
@@ -59,7 +60,7 @@ public class Compras {
         TrechosProcurados retorno = null;
         int num = 0;
 
-            for (TrechosProcurados trecho : historica_compra.getTrechos_procurados()) {
+            for (TrechosProcurados trecho : historico_pesquisa.getTrechos_procurados()) {
                 if (trecho.getNum_pesquisa() > num) {
                     num = trecho.getNum_pesquisa();
                     retorno = trecho;
@@ -174,7 +175,7 @@ public class Compras {
         }
     }*/
 
-    private double Comprar_Passagem(Trecho trecho, Data Hora_Compra, int QuantCompras) {
+    private double Comprar_Passagem(Trecho trecho, Data Hora_Compra, int QuantCompras, boolean eh_inicio) {
         double retorno = 0;
     
         if (!cliente.getVip().getEh_VIP()) { // Cliente não é VIP
@@ -189,8 +190,8 @@ public class Compras {
     
                 // Atualizar o histórico de compras
                 int temp_aux = 0;
-                for (TrechosProcurados trechoHist : historica_compra.getTrechos_procurados()) {
-                    if (historica_compra.ExisteTrecho(trecho) && historica_compra.getTrechos_procurados().equals(trechoHist)) {
+                for (TrechosProcurados trechoHist : historico_pesquisa.getTrechos_procurados()) {
+                    if (historico_pesquisa.ExisteTrecho(trecho) && historico_pesquisa.getTrechos_procurados().equals(trechoHist)) {
                         temp_aux = trechoHist.getNum_pesquisa() + 1;
                         trechoHist.setNum_pesquisa(temp_aux);
                         break;
@@ -198,7 +199,7 @@ public class Compras {
                 }
     
                 // Adicionar a compra ao histórico geral
-                DatasProcuradas novaData = new DatasProcuradas(Hora_Compra, temp_aux);
+                DatasProcuradas novaData = new DatasProcuradas(Hora_Compra, temp_aux, eh_inicio);
                 TrechosProcurados novoTrecho = new TrechosProcurados(temp_aux, trecho.getLocalSaida());
                 //historica_compra.AddDatas(novaData);
                 //historica_compra.AddTrecho(novoTrecho);
@@ -217,8 +218,8 @@ public class Compras {
     
                 // Atualizar o histórico de compras
                 int temp_aux = 0;
-                for (TrechosProcurados trechoHist : historica_compra.getTrechos_procurados()) {
-                    if (historica_compra.ExisteTrecho(trecho) && historica_compra.getTrechos_procurados().equals(trechoHist)) {
+                for (TrechosProcurados trechoHist : historico_pesquisa.getTrechos_procurados()) {
+                    if (historico_pesquisa.ExisteTrecho(trecho) && historico_pesquisa.getTrechos_procurados().equals(trechoHist)) {
                         temp_aux = trechoHist.getNum_pesquisa() + 1;
                         trechoHist.setNum_pesquisa(temp_aux);
                         break;
@@ -242,14 +243,31 @@ public class Compras {
         return retorno;
     }
 
+    public Historico getHistorica_compra() {
+        return historica_compra;
+    }
+
+    public void setHistorica_compra(Historico historica_compra) {
+        this.historica_compra = historica_compra;
+    }
+
+    public HistoricoPesquisa getHistorico_pesquisa() {
+        return historico_pesquisa;
+    }
+
+    public void setHistorico_pesquisa(HistoricoPesquisa historico_pesquisa) {
+        this.historico_pesquisa = historico_pesquisa;
+    }
+
     private boolean Tem_Suficiente(double n1, double n2) {
         if (n1 > n2) 
             return true;
         else 
             return false;
     }
-    private void UpdateSaldo(double valor) {
-        cliente.setSaldo(cliente.getSaldo() - valor); 
+    private double UpdateReturnSaldo(double valor) {
+        cliente.setSaldo(cliente.getSaldo() - valor);
+        return cliente.getSaldo() + valor;
     }
 
     private double Comprar_Quarto(Hotel hotel, int QuantCompras, int indice) {
@@ -263,7 +281,8 @@ public class Compras {
         if (!cliente.getVip().getEh_VIP()) {
             switch (indice) {
                     case 1: if (Tem_Suficiente(saldoc, preco1)) {
-
+                        retorno = UpdateReturnSaldo(preco1);
+                        
                     }
             }   
         }
