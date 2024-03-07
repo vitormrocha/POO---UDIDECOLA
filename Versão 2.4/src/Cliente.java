@@ -73,8 +73,7 @@ public class Cliente {
             this.numeroCompras = 0;
     }
 
-    public void AddCompra (int quant) {
-        for (int i = 0; i < quant; i++)
+    public void AddCompra () {
             numeroCompras++;
     }
 
