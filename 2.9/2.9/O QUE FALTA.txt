@@ -1,0 +1,28 @@
+Compras: 
+	Aplicar os metodos de salvar historico_compra e pesquisa no metodo realiza compra
+
+Busca de Hotel por cidade
+
+Colocar atributo do valor do quarto com desconto 
+
+Ver parte do programa sobre cancelamento 
+	- Criar um histórico para cada cliente de compra
+	- Puxar as informações do histórico, se for da Passagem ela 
+	
+Adicionar atributo "numeroHoteisCadastrados" no Funcionário
+
+Calcular salário do Funcionário baseado em (salario fixo) * (porcentagem Salario * qnt Hoteis cadastrados)
+	Ler letra J para fazer (revisar o cálculo)
+	
+* Adicionar a quantidade necessária de compras para se tornar VIP (Ja foi implementada so falta os testes)
+	
+
+Historico de Pesquisa(terminar de salvar historico no metodo compras)
+
+Fazer Histórico de Compra (terminar de salvar historico no metodo compras)
+
+Colocar Static no:
+	- Valor que o Hotel paga para UdiDecola por diária
+	- Valor que a companhia aérea paga para Udidecola por passagem vendida 
+	- Número de compras que o cliente precisa fazer para se tornar VIP
+	- Valor pago ao funcionário por cadastro de Hotel
