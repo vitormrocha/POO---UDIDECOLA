@@ -73,8 +73,9 @@ public class Cliente {
             this.numeroCompras = 0;
     }
 
-    public void AddCompra () {
-        numeroCompras++;
+    public void AddCompra (int quant) {
+        for (int i = 0; i < quant; i++)
+            numeroCompras++;
     }
 
     public Endereco getEndereco() {
