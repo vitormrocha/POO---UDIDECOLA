@@ -1,11 +1,8 @@
 import java.util.ArrayList;
 
 public class HistoricoPesquisa {
-     private ArrayList <DatasProcuradas> datas_procuradas;
+    private ArrayList <DatasProcuradas> datas_procuradas;
     private ArrayList <TrechosProcurados> trechos_procurados;
-    private Data inicio_pesquisa;
-    private Data fim_pesquisa;
-    private 
 
     public ArrayList<DatasProcuradas> getDatas_procuradas() {
         return datas_procuradas;
@@ -53,5 +50,5 @@ public class HistoricoPesquisa {
         trechos_procurados = new ArrayList<>();
     }
 
-    public HistoricoPesquisa
+    //public HistoricoPesquisa
 }
