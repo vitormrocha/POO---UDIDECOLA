@@ -37,5 +37,22 @@ public class Historico {
         AddDatas(date);
         AddTrecho(trecho);
     }
+
+    public boolean ExisteTrecho(Trecho trecho) {
+        for (TrechosProcurados aux : trechos_procurados) {
+            if (aux.getNome_destino().equals(trecho.getLocalSaida())) 
+                return true;
+        }
+        return false;
+    }
+
+    public boolean ExisteDatas(Data data) {
+        for (DatasProcuradas aux : datas_procuradas) {
+            if (aux.getData().equals(data)) 
+                return true;
+
+        }
+        return false;
+    }
     
 }
