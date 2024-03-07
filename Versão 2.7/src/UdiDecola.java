@@ -21,7 +21,16 @@ public class UdiDecola {
 
     // ================================= Getters e Setters:
 
+    public ArrayList<Aviao> getAvioes() { return avioes; }
 
+    public ArrayList<Trecho> getTrechos() { return trechos; }
+
+    public ArrayList<Funcionario> getFuncionarios() { return funcionarios; }
+
+    public ArrayList<Cliente> getClientes() { return clientes; }
+
+    public ArrayList<Hotel> getHoteis() { return hoteis; }
+    
     // ================================= Outros Métodos
     public void instanciarUdi(){
 
