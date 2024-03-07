@@ -23,6 +23,7 @@ public class UdiDecola {
 
     public ArrayList<Aviao> getAvioes() { return avioes; }
 
+    // ex da main: Trecho trecho = udi.getTrechos().get(2);
     public ArrayList<Trecho> getTrechos() { return trechos; }
 
     public ArrayList<Funcionario> getFuncionarios() { return funcionarios; }
